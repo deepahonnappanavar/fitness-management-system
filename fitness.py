@@ -6,21 +6,6 @@ Original file is located at
 """
 import streamlit as st
 st.title("🏋️ Login to Your Gym Account")
-members = []
-print("Gym Management System")
-def add_member():
-    name = input("Enter member name: ")
-    age = int(input("Enter age: "))
-    fee = float(input("Enter fee: "))
-    member = {
-        "name": name,
-        "age": age,
-        "fee": fee,
-        "status": "Active"
-    }
-
-    return member
-
 print(add_member())
 st.set_page_config(
 page_title="Gym Management",
@@ -52,3 +37,21 @@ if st.button("Login"):
     else:
 
         st.error("Invalid username or password.")
+members = []
+print("Gym Management System")
+def add_member():
+    name = input("Enter member name: ")
+    age = int(input("Enter age: "))
+    fee = float(input("Enter fee: "))
+    member = {
+        "name": name,
+        "age": age,
+        "fee": fee,
+        "status": "Active"
+    }
+
+    return member
+
+print(add_member())
+
+
