@@ -46,7 +46,7 @@ def add_member():
 
   fee = st.number_input("Enter membership fee")
 
-    member = {
+  member = {
         "name": name,
         "age": age,
         "fee": fee,
