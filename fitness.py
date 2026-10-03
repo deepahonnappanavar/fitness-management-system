@@ -40,6 +40,7 @@ if st.button("Login"):
 members = []
 print("Gym Management System")
 def add_member():
+    return member
   name = st.text_input("Enter member name")
 
   age = st.number_input("Enter age")
@@ -53,7 +54,7 @@ def add_member():
         "status": "Active"
     }
 
-       return member
+    return member
 
 print(add_member())
 
