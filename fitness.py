@@ -36,12 +36,16 @@ if st.button("Login"):
     else:
 
         st.error("Invalid username or password.")
+
 members = []
 print("Gym Management System")
 def add_member():
-    name = input("Enter member name: ")
-    age = int(input("Enter age: "))
-    fee = float(input("Enter fee: "))
+  name = st.text_input("Enter member name")
+
+  age = st.number_input("Enter age")
+
+  fee = st.number_input("Enter membership fee")
+
     member = {
         "name": name,
         "age": age,
