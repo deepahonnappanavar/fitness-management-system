@@ -27,7 +27,7 @@ password
 
 if st.button("Login"):
 
-    if username == "admin" and password == "1234":
+    if username == username and password == password:
 
         st.success("Login successful! 🎉")
 
