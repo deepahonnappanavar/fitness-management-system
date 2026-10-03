@@ -6,7 +6,6 @@ Original file is located at
 """
 import streamlit as st
 st.title("🏋️ Login to Your Gym Account")
-print(add_member())
 st.set_page_config(
 page_title="Gym Management",
 page_icon="🏋️"
