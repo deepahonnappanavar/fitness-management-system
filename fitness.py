@@ -35,5 +35,21 @@ if st.button("Login"):
     else:
 
         st.error("Invalid username or password.")
+if st.session_state["logged_in"]:
+
+    st.title("🏋️ Gym Management Home")
+
+    st.success("Login successful! 🎉")
+
+    st.header("👤 Add Member")
+
+    name = st.text_input("Enter member name")
+
+    age = st.number_input("Enter age", min_value=1)
+
+    fee = st.number_input("Enter membership fee", min_value=0.0)
+
+    if st.button("Add Member"):
+        st.success("Member added successfully!")
 
 
