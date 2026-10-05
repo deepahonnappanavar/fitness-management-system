@@ -32,7 +32,8 @@ if st.button("Login"):
         
         st.session_state["logged_in"] = True 
         st.success("Login successful! 🎉") 
-        st.switch_page("page/the.py")
+        st.session_state["logged_in"] = True
+        st.rerun()
 
     else:
 
