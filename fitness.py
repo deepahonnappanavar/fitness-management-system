@@ -5,39 +5,48 @@ Original file is located at
     https://colab.research.google.com/drive/17UoYf2sfTqU87dxgswH_jMgRiwKN2LVr
 """
 import streamlit as st
-st.title("🏋️ Login to Your Gym Account")
+
 st.set_page_config(
-page_title="Gym Management",
-page_icon="🏋️"
+    page_title="Gym Management",
+    page_icon="🏋️"
 )
 
-username = st.text_input(
-"Enter your username"
-)
-
-password = st.text_input(
-"Enter your password",
-type="password"
-)
-
-verification = [
-username,
-password
-]
-
-if st.button("Login"):
-
-    if username == "Rockgym" and password == "fitness":
-        st.session_state["logged_in"] = True 
-        st.success("Login successful! 🎉") 
-        st.rerun()
-
-    else:
-
-        st.error("Invalid username or password.")
+# Login status
 if "logged_in" not in st.session_state:
     st.session_state["logged_in"] = False
-    
+
+
+# =========================
+# LOGIN PAGE
+# =========================
+
+if not st.session_state["logged_in"]:
+
+    st.title("🏋️ Login to Your Gym Account")
+
+    username = st.text_input("Enter your username")
+
+    password = st.text_input(
+        "Enter your password",
+        type="password"
+    )
+
+    if st.button("Login"):
+
+        if username == "Rockgym" and password == "fitness":
+
+            st.session_state["logged_in"] = True
+            st.rerun()
+
+        else:
+
+            st.error("Invalid username or password.")
+
+
+# =========================
+# HOME PAGE
+# =========================
+
 else:
 
     st.title("🏠 Gym Management Home")
@@ -48,11 +57,29 @@ else:
 
     name = st.text_input("Enter member name")
 
-    age = st.number_input("Enter age")
+    age = st.number_input(
+        "Enter age",
+        min_value=1
+    )
 
-    fee = st.number_input("Enter membership fee")
+    fee = st.number_input(
+        "Enter membership fee",
+        min_value=0.0
+    )
 
     if st.button("Add Member"):
-        st.success("Member added successfully!")
 
+        if name == "":
+            st.error("Please enter member name.")
+
+        elif age <= 15:
+            st.error("Member must be older than 15 years.")
+
+        else:
+            st.success("Member added successfully! 🎉")
+
+            st.write("Name:", name)
+            st.write("Age:", age)
+            st.write("Fee:", fee)
+            st.write("Status: Active")
 
