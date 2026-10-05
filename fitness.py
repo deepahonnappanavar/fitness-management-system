@@ -28,10 +28,10 @@ password
 if st.button("Login"):
 
     if username == "Rockgym" and password == "fitness":
-
-        st.success("Login successful! 🎉")
-
         st.write("Welcome to your Gym Management Dashboard.")
+        st.session_state["logged_in"] = True 
+        st.success("Login successful! 🎉") 
+        st.switch_page("pages/dashboard.py")
 
     else:
 
