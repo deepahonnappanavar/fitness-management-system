@@ -37,8 +37,6 @@ if st.button("Login"):
         st.error("Invalid username or password.")
 if st.session_state["logged_in"]:
 
-    st.title("🏋️ Gym Management Home")
-
     st.success("Login successful! 🎉")
 
     st.header("👤 Add Member")
