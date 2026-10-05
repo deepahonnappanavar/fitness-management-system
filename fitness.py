@@ -38,7 +38,9 @@ if st.button("Login"):
 if "logged_in" not in st.session_state:
     st.session_state["logged_in"] = False
     
-if st.session_state["logged_in"]:
+else:
+
+    st.title("🏠 Gym Management Home")
 
     st.success("Login successful! 🎉")
 
@@ -46,9 +48,9 @@ if st.session_state["logged_in"]:
 
     name = st.text_input("Enter member name")
 
-    age = st.number_input("Enter age", min_value=1)
+    age = st.number_input("Enter age")
 
-    fee = st.number_input("Enter membership fee", min_value=0.0)
+    fee = st.number_input("Enter membership fee")
 
     if st.button("Add Member"):
         st.success("Member added successfully!")
