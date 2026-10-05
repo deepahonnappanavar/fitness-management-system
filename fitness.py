@@ -32,7 +32,6 @@ if st.button("Login"):
         
         st.session_state["logged_in"] = True 
         st.success("Login successful! 🎉") 
-        st.session_state["logged_in"] = True
         st.rerun()
 
     else:
