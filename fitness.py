@@ -28,8 +28,6 @@ password
 if st.button("Login"):
 
     if username == "Rockgym" and password == "fitness":
-        
-        
         st.session_state["logged_in"] = True 
         st.success("Login successful! 🎉") 
         st.rerun()
